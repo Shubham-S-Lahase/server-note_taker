@@ -10,6 +10,6 @@ const NoteSchema = new Schema(
   {timestamps: true}
 );
 
-const UserModel = mongoose.model("Users", UserSchema);
+const NoteModel = mongoose.model("Notes", NoteSchema);
 
-module.exports = UserModel;
+module.exports = NoteModel;

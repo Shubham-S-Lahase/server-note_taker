@@ -7,7 +7,8 @@ const cors = require("cors");
 const RegisterRoute = require("./Routes/signup");
 const LoginRoute = require("./Routes/login");
 const ProfileRoute = require("./Routes/profile");
-const LogoutRoute = require("./Routes/logout")
+const LogoutRoute = require("./Routes/logout");
+const DeleteRoute = require("./Routes/delete")
 
 const app = express();
 app.use(express.json());

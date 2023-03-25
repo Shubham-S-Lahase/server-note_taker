@@ -10,13 +10,24 @@ router.use(cookieParser());
 
 router.post('/note', async(req,res) => {
     const { token } = req.cookies;
-    jwt.verify(token, secret, {}, async (err) => {
+    jwt.verify(token, secret, {}, async (err, info) => {
         if (err) throw err;
         const { title, description } = req.body;
         const noteDoc = await Note.create({
           title,
           description,
+          id: info.id
         });
         res.json(noteDoc);
       });
+})
+
+router.get('/note', async(req,res) => {
+  const { token } = req.cookies;
+  jwt.verify(token, secret, {}, async (err, info) => {
+      if (err) throw err;
+      res.json(
+        await Note.find({id : info.id})
+      )
+    });
 })
