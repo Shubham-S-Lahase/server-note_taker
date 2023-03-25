@@ -6,6 +6,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const RegisterRoute = require("./Routes/signup");
 const LoginRoute = require("./Routes/login");
+const ProfileRoute = require("./Routes/profile");
+const LogoutRoute = require("./Routes/logout")
 
 const app = express();
 app.use(express.json());
@@ -29,6 +31,8 @@ app.get("/test", (req,res) => {
 
 app.use('/api', RegisterRoute);
 app.use('/api', LoginRoute);
+app.use('/api', ProfileRoute);
+app.use('/api', LogoutRoute)
 
 app.listen(port, () => {
     console.log(`Server is running on ${port}`);

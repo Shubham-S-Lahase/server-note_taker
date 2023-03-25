@@ -18,6 +18,7 @@ router.post('/signup', async(req,res) => {
             email,
             password:bcrypt.hashSync(password, salt)
         })
+        res.json(userDoc);
     }
 });
 
