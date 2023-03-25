@@ -20,7 +20,7 @@ router.post('/note', async(req,res) => {
         });
         res.json(noteDoc);
       });
-})
+});
 
 router.get('/note', async(req,res) => {
   const { token } = req.cookies;
@@ -30,4 +30,6 @@ router.get('/note', async(req,res) => {
         await Note.find({id : info.id})
       )
     });
-})
+});
+
+module.exports = router;

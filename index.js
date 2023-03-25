@@ -9,6 +9,7 @@ const LoginRoute = require("./Routes/login");
 const ProfileRoute = require("./Routes/profile");
 const LogoutRoute = require("./Routes/logout");
 const DeleteRoute = require("./Routes/delete")
+const Noteroute = require("./Routes/note");
 
 const app = express();
 app.use(express.json());
@@ -35,6 +36,7 @@ app.use('/api', LoginRoute);
 app.use('/api', ProfileRoute);
 app.use('/api', LogoutRoute);
 app.use('/api', DeleteRoute);
+app.use('/api', Noteroute)
 
 app.listen(port, () => {
     console.log(`Server is running on ${port}`);
