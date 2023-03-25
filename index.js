@@ -13,7 +13,7 @@ const Noteroute = require("./Routes/note");
 
 const app = express();
 app.use(express.json());
-app.use(cors({credentials: true, origin: "http://localhost:3000"}));
+app.use(cors({credentials: true, origin: "https://dreamy-choux-0fcc74.netlify.app"}));
 
 let port = process.env.PORT;
 let url = process.env.URL;
