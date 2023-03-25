@@ -15,3 +15,5 @@ router.post('/delete', async(req,res) => {
         Note.deleteMany({id: info.id})
       });
 })
+
+module.exports = router;

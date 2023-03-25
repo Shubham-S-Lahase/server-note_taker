@@ -16,13 +16,13 @@ router.post("/login", async(req,res) =>{
     const userDoc = await User.findOne({email});
     const passwordOK = bcrypt.compareSync(password, userDoc.password);
     if(passwordOK){
-        jwt.sign({email, id: userDoc._id}, secret, {}, (err, token) => {
-            if(err) throw err;
-            res.cookie('token', token).json({
-                id: userDoc._id,
-                email
-            });
-        });
+      jwt.sign({email, id:userDoc._id}, secret, {}, (err, token) => {
+        if(err) throw err;
+        res.status(200).cookie('token', token).json({
+            id: userDoc._id,
+            email
+        })
+      })
     }else{
         res.status(400).json('Invalid Credentials');
     }

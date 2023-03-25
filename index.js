@@ -33,7 +33,8 @@ app.get("/test", (req,res) => {
 app.use('/api', RegisterRoute);
 app.use('/api', LoginRoute);
 app.use('/api', ProfileRoute);
-app.use('/api', LogoutRoute)
+app.use('/api', LogoutRoute);
+app.use('/api', DeleteRoute);
 
 app.listen(port, () => {
     console.log(`Server is running on ${port}`);
